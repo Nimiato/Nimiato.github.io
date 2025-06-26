@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <div class="mode-selection">
+            <select name="mode" id="mode">
+                <option value="random">Random</option>
+                <option value="fiveWilds">Five Wilds</option>
+            </select>
+        </div>
+        <div class="header-title-container">
+            <h1> DJ WILD </h1>
+        </div>
+        <div class="header-round-info-container">
+            <div class="header-score-container">
+                <h2 class="score">Score&nbsp;<span class="badge">0</span></h2>
+            </div>
+            <div class="header-round-container">
+                <h2 class="round">Round&nbsp;<span class="badge">0</span></h2>
+            </div>
+            </div>
+        </div>
+        <div class="header-status-container">
+            <p class="current-status">
+                Select the mode and click the 'Play Game' button to start!
+            </p>
+        </div>
+        <div class="game-play-button-container">
+            <button id = "playGame" class="play-game">
+                Play Game
+            </button>
+        </div>
+    </header>
+    <main>
+        <div class="card-container">
+            <div class="card-pos-a">
+
+            </div>
+            <div class="card-pos-b">
+
+            </div>
+            <div class="card-pos-c">
+
+            </div>
+            <div class="card-pos-d">
+
+            </div>
+            <div class="card-pos-e">
+
+            </div>
+            <div class="card-pos-f">
+
+            </div>
+            <div class="card-pos-g">
+
+            </div>
+            <div class="card-pos-h">
+
+            </div>
+            <div class="card-pos-i">
+
+            </div>
+            <div class="card-pos-j">
+
+            </div>
+            <!--<div class="card">
+                <div class="card-inner">
+                    <div class="card-front">
+                        <img src="images/jack_of_clubs2.png" alt="" class="card-img">
+                    </div>
+                    <div class="card-back">
+                        <img src="images/Card-back.png" alt="" class="card-img">
+                    </div>
+                </div>
+            </div> -->
+        </div>
+    </main>
+    <div class="dropdown-container">
+        <div class="dp-drop-container">
+            <label for="hands">What is the DP's hand?</label>
+            <select name="hands" id="hands">
+                <option value="select" selected disabled hidden>--Select--</option>
+                <option value="High Card">High Card</option>
+                <option value="Pair">Pair</option>
+                <option value="Two Pair">Two Pair</option>
+                <option value="Trips">Trips</option>
+                <option value="Straight">Straight</option>
+                <option value="Flush">Flush</option>
+                <option value="Full House">Full House</option>
+                <option value="Quads">Quads</option>
+                <option value="Straight Flush">Straight Flush</option>
+                <option value="Quints">Quints</option>
+                <option value="Royal Flush">Royal Flush</option>
+                <option value="Five Wilds">Five Wilds</option>
+            </select>
+        </div>
+        <div class="player-drop-container">
+            <label for="hands2">What is the Player's hand?</label>
+            <select name="hands2" id="hands2">
+                <option value="select" selected disabled hidden >--Select--</option>
+                <option value="High Card">High Card</option>
+                <option value="Pair">Pair</option>
+                <option value="Two Pair">Two Pair</option>
+                <option value="Trips">Trips</option>
+                <option value="Straight">Straight</option>
+                <option value="Flush">Flush</option>
+                <option value="Full House">Full House</option>
+                <option value="Quads">Quads</option>
+                <option value="Straight Flush">Straight Flush</option>
+                <option value="Quints">Quints</option>
+                <option value="Royal Flush">Royal Flush</option>
+                <option value="Five Wilds">Five Wilds</option>
+            </select>
+        </div>
+        <div class="wlp-drop-container">
+            <label for="wlp">Win/Lose/Push?</label>
+            <select name="wlp" id="wlp">
+                <option value="select" selected disabled hidden>--Select--</option>
+                <option value="WIN">Win</option>
+                <option value="LOSE">Lose</option>
+                <option value="PUSH">Push</option>
+            </select>
+        </div>
+    </div>
+    <div class="Submit-button-container">
+            <button id ="submit" class="submit-button">
+                Submit
+            </button>
+    <div class="NextHand-button-container">
+            <button id ="Next" class="Next-button">
+                Next Hand
+            </button>
+    <script src="index.js"></script>
+</body>
+</html>

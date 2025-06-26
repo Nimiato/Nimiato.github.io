@@ -1,0 +1,282 @@
+:root{
+    --card-width:157px;
+    --card-height:220px;
+    --num-cards: 10;
+    --card-horizontal-space: 100px;
+
+    --badge-bg-color: darkgray;
+    --primary-color: black;
+    --secondary-color: #ffff;
+}
+
+body
+{
+    height:100vh;
+    font-family: "JetBrains Mono",monospace;
+}
+
+main
+{
+    height: 55%;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 10px;
+}
+
+.card-container
+{
+    position: relative;
+    height:100%;
+    width:calc(var(--card-width) * (var(--num-cards) / 2) + var(--card-horizontal-space));
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    grid-template-rows:    1fr 1fr;
+    grid-template-areas: "a b c d e"
+                         "f g h i j";
+    border: 1px solid gold;;
+}
+
+.card-pos-a
+{
+    grid-area: a;
+    border: 1px solid gold;
+    background-color: cornflowerblue;
+}
+
+.card-pos-b
+{
+    grid-area: b;
+    border: 1px solid gold;
+    background-color: cornflowerblue;
+}
+
+.card-pos-c
+{
+    grid-area: c;
+    border: 1px solid gold;
+    background-color: cornflowerblue;
+}
+
+.card-pos-d
+{
+    grid-area: d;
+    border: 1px solid gold;
+    background-color: cornflowerblue;
+}
+
+.card-pos-e
+{
+    grid-area: e;
+    border: 1px solid gold;
+    background-color: cornflowerblue;
+}
+
+.card-pos-f
+{
+    grid-area: f;
+    border: 1px solid gold;
+    background-color: cornflowerblue;
+}
+
+.card-pos-g
+{
+    grid-area: g;
+    border: 1px solid gold;
+    background-color: cornflowerblue;
+}
+
+.card-pos-h
+{
+    grid-area: h;
+    border: 1px solid gold;
+    background-color: cornflowerblue;
+}
+
+.card-pos-i
+{
+    grid-area: i;
+    border: 1px solid gold;
+    background-color: cornflowerblue;
+}
+
+.card-pos-j
+{
+    grid-area: j;
+    border: 1px solid gold;
+    background-color: cornflowerblue;
+}
+
+.card-pos-a, .card-pos-b, .card-pos-c, .card-pos-d, .card-pos-e, .card-pos-f, .card-pos-g, .card-pos-h, .card-pos-i , .card-pos-j
+{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}  
+
+.card
+{
+    position:absolute;
+    height:var(--card-height);
+    width:var(--card-width);
+    perspective: 1000px;
+    /*cursor: pointer;*/
+}
+
+.card-inner
+{
+    position:relative;
+    width:100%;
+    height:100%;
+    text-align: center;
+    transition: transform 0.6s;
+    transform-style: preserve-3d;
+}
+
+.card-front, .card-back{
+    position:absolute;
+    width:100%;
+    height:100%;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+}
+
+.card-img
+{
+    height:100%;
+}
+
+.card-back
+{
+    transform: rotateY(180deg);
+}
+
+.card-inner.flip-it
+{
+    transform: rotateY(180deg)
+}
+
+header
+{
+    display:flex;
+    flex-direction: column;
+    margin-bottom: 10px;
+}
+
+.header-title-container
+{
+    display: flex;
+    justify-content: center;    
+    font-family: "JetBrains Mono",monospace;
+}
+
+.header-round-info-container
+{
+    display: flex;
+    justify-content: space-evenly;
+    font-family: "JetBrains Mono",monospace;
+}
+
+.header-score-container, .header-round-container
+{
+    width: 150px;
+}
+
+
+.header-status-container, .game-play-button-container, .header-round-container, .header-score-container
+{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.Submit-button-container, .NextHand-button-container
+{
+    display:  flex;
+    justify-content: space-evenly;
+}
+
+.dropdown-container
+{
+    display:flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    font-family: "JetBrains Mono",monospace;
+    font-size: 1.5rem;
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+.dp-drop-container, .player-drop-container, .wlp-drop-container
+{
+   margin-right: 10px;
+   margin-bottom: 10px;
+}
+
+.badge
+{
+    background-color: var(--badge-bg-color);
+    color: var(--secondary-color);
+    padding: 2px 10px 3px;
+    border-radius: 15px;
+}
+
+.current-status
+{
+    font-size: 1.5rem;
+    text-align: center;
+}
+
+
+/* CSS */
+#playGame, #submit, #Next, #wlp, #hands, #hands2, #mode{
+  align-items: center;
+  appearance: none;
+  background-color: #FCFCFD;
+  border-radius: 4px;
+  border-width: 0;
+  box-shadow: rgba(45, 35, 66, 0.4) 0 2px 4px,rgba(45, 35, 66, 0.3) 0 7px 13px -3px,#D6D6E7 0 -3px 0 inset;
+  box-sizing: border-box;
+  color: #36395A;
+  cursor: pointer;
+  display: inline-flex;
+  font-family: "JetBrains Mono",monospace;
+  height: 48px;
+  justify-content: center;
+  line-height: 1;
+  list-style: none;
+  overflow: hidden;
+  padding-left: 16px;
+  padding-right: 16px;
+  position: relative;
+  text-align: left;
+  text-decoration: none;
+  transition: box-shadow .15s,transform .15s;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  white-space: nowrap;
+  will-change: box-shadow,transform;
+  font-size: 18px;
+}
+
+#playGame:focus, #submit:focus , #Next:focus {
+  box-shadow: #D6D6E7 0 0 0 1.5px inset, rgba(45, 35, 66, 0.4) 0 2px 4px, rgba(45, 35, 66, 0.3) 0 7px 13px -3px, #D6D6E7 0 -3px 0 inset;
+}
+
+#playGame:hover, #submit:hover, #Next:hover, #wlp:hover {
+  box-shadow: rgba(45, 35, 66, 0.4) 0 4px 8px, rgba(45, 35, 66, 0.3) 0 7px 13px -3px, #D6D6E7 0 -3px 0 inset;
+  transform: translateY(-2px);
+}
+
+#playGame:active, #submit:active, #Next:active {
+  box-shadow: #D6D6E7 0 3px 7px inset;
+  transform: translateY(2px);
+}
+
+#playGame:disabled, #Next:disabled, #submit:disabled
+{
+    pointer-events: none;
+    background-color: #36395A;
+    color:#D6D6E7;
+}
