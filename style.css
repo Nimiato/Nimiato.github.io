@@ -1,23 +1,27 @@
 :root{
-    --card-width:157px;
-    --card-height:220px;
+    --card-width:clamp(100px,12vw,157px);
+    --card-height:clamp(140px,17vw,220px);
     --num-cards: 10;
-    --card-horizontal-space: 100px;
+    --card-horizontal-space: clamp(30px, 8vw, 100px);
 
     --badge-bg-color: darkgray;
     --primary-color: black;
     --secondary-color: #ffff;
 }
 
-body
+body, html
 {
-    height:100vh;
+    height:100%;
+    margin: 0;
     font-family: "JetBrains Mono",monospace;
 }
 
 main
 {
     height: 55%;
+    flex-wrap: wrap;
+    padding: 1rem;
+    box-sizing: border-box;
     display: flex;
     justify-content: center;
     margin-bottom: 10px;
@@ -279,4 +283,33 @@ header
     pointer-events: none;
     background-color: #36395A;
     color:#D6D6E7;
+}
+
+@media screen and (max-width:600px)
+{
+    main
+    {
+        height: 50%;
+    }
+    .current-status
+    {
+        font-size: 1.2rem;
+    }
+    .game-play-button-container, .NextHand-button-container, .Submit-button-container
+    {
+        flex-direction: column;
+        width: 100%;
+        gap: 8px;
+    }
+    .dropdown-container
+    {
+        font-size: 1.2rem;
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    select
+    {
+        width: 100%
+    }
 }
