@@ -12,12 +12,23 @@ Five Wilds - Gurantees that all 5 wild cards show up in the seven hands somewher
 The Hand Order for DJ Wild is as follows
 
 Pair
+
 Two Pair
+
 Trips (Three of a Kind)
+
 Straight
+
 Flush
+
 Quads (Four of a kind)
+
 Straight Flush
+
 Quints (Five of a Kind)
+
 Royal Flush
+
 Five Wilds
+
+This still isn't finished just a Playable Prototype. Need to Comment the Code and refactor some things since I just did everything with the first solution that came to mind.
