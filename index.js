@@ -214,7 +214,7 @@ function evaluateHandChoice()
     submitButtonElem.addEventListener('click', ()=>{
         if(dpselectedHandElem.value == dphandresult && playerselectedHandElem.value == playerhandresult && wlpselectedElem.value == winner)
             {
-                updateStatusElement(currentGameStatusElem, "block", winColor, `Correct! The DP hand is ${dphandresult} and The Player's hand is ${playerhandresult}. When ready please hit Next Hand.`)
+                updateStatusElement(currentGameStatusElem, "block", winColor, `Correct! The Dealer's hand is ${dphandresult} and The Player's hand is ${playerhandresult}. When ready please hit Next Hand.`)
                 score += 1
                 nextButtonElem.disabled = false
                 submitButtonElem.disabled = true
@@ -223,7 +223,7 @@ function evaluateHandChoice()
             }
         else
             {
-                updateStatusElement(currentGameStatusElem, "block", loseColor, `Incorrect! The DP hand is ${dphandresult} and The Player's hand is ${playerhandresult}. When ready please hit Next Hand.`)
+                updateStatusElement(currentGameStatusElem, "block", loseColor, `Incorrect! The Dealer's hand is ${dphandresult} and The Player's hand is ${playerhandresult}. When ready please hit Next Hand.`)
                 nextButtonElem.disabled = false
                 submitButtonElem.disabled = true
             }
@@ -894,7 +894,7 @@ function initializeNewRound()
     gameInProgress = true
     animinProgress = true
 
-    updateStatusElement(currentGameStatusElem, "block", primaryColor, "Select The DP Hand, Select The Player Hand, Select if the Player Wins, Loses, or Pushes and hit Submit when ready.")
+    updateStatusElement(currentGameStatusElem, "block", primaryColor, "Select The Dealer's Hand, Select The Player Hand, Select if the Player Wins, Loses, or Pushes and hit Submit when ready.")
     //updateStatusElement(roundElem, "block", primaryColor, `Round <span class='badge'>${roundnum}</span>`)
 
 }
