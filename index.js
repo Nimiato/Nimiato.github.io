@@ -1,60 +1,5 @@
 
-const cardObjectDefinition2 = [
-    {id:1, imagePath:'/images/2_of_clubs.png', suit:'c', rank:2},
-    {id:2, imagePath:'/images/3_of_clubs.png', suit:'c', rank:3},
-    {id:3, imagePath:'/images/4_of_clubs.png', suit:'c', rank:4},
-    {id:4, imagePath:'/images/5_of_clubs.png', suit:'c', rank:5},
-    {id:5, imagePath:'/images/6_of_clubs.png', suit:'c', rank:6},
-    {id:6, imagePath:'/images/7_of_clubs.png', suit:'c', rank:7},
-    {id:7, imagePath:'/images/8_of_clubs.png', suit:'c', rank:8},
-    {id:8, imagePath:'/images/9_of_clubs.png', suit:'c', rank:9},
-    {id:9, imagePath:'/images/10_of_clubs.png', suit:'c', rank:10},
-    {id:10, imagePath:'/images/jack_of_clubs2.png', suit:'c', rank:11},
-    {id:11, imagePath:'/images/queen_of_clubs2.png', suit:'c', rank:12},
-    {id:12, imagePath:'/images/king_of_clubs2.png', suit:'c', rank:13},
-    {id:13, imagePath:'/images/ace_of_clubs.png', suit:'c', rank:14},
-    {id:14, imagePath:'/images/2_of_hearts.png', suit:'h', rank:2},
-    {id:15, imagePath:'/images/3_of_hearts.png', suit:'h', rank:3},
-    {id:16, imagePath:'/images/4_of_hearts.png', suit:'h', rank:4},
-    {id:17, imagePath:'/images/5_of_hearts.png', suit:'h', rank:5},
-    {id:18, imagePath:'/images/6_of_hearts.png', suit:'h', rank:6},
-    {id:19, imagePath:'/images/7_of_hearts.png', suit:'h', rank:7},
-    {id:20, imagePath:'/images/8_of_hearts.png', suit:'h', rank:8},
-    {id:21, imagePath:'/images/9_of_hearts.png', suit:'h', rank:9},
-    {id:22, imagePath:'/images/10_of_hearts.png', suit:'h', rank:10},
-    {id:23, imagePath:'/images/jack_of_hearts2.png', suit:'h', rank:11},
-    {id:24, imagePath:'/images/queen_of_hearts2.png', suit:'h', rank:12},
-    {id:25, imagePath:'/images/king_of_hearts2.png', suit:'h', rank:13},
-    {id:26, imagePath:'/images/ace_of_hearts.png', suit:'h', rank:14},
-    {id:27, imagePath:'/images/2_of_spades.png', suit:'s', rank:2},
-    {id:28, imagePath:'/images/3_of_spades.png', suit:'s', rank:3},
-    {id:29, imagePath:'/images/4_of_spades.png', suit:'s', rank:4},
-    {id:30, imagePath:'/images/5_of_spades.png', suit:'s', rank:5},
-    {id:31, imagePath:'/images/6_of_spades.png', suit:'s', rank:6},
-    {id:32, imagePath:'/images/7_of_spades.png', suit:'s', rank:7},
-    {id:33, imagePath:'/images/8_of_spades.png', suit:'s', rank:8},
-    {id:34, imagePath:'/images/9_of_spades.png', suit:'s', rank:9},
-    {id:35, imagePath:'/images/10_of_spades.png', suit:'s', rank:10},
-    {id:36, imagePath:'/images/jack_of_spades2.png', suit:'s', rank:11},
-    {id:37, imagePath:'/images/queen_of_spades2.png', suit:'s', rank:12},
-    {id:38, imagePath:'/images/king_of_spades2.png', suit:'s', rank:13},
-    {id:39, imagePath:'/images/ace_of_spades2.png', suit:'s', rank:14},
-    {id:40, imagePath:'/images/2_of_diamonds.png', suit:'d', rank:2},
-    {id:41, imagePath:'/images/3_of_diamonds.png', suit:'d', rank:3},
-    {id:42, imagePath:'/images/4_of_diamonds.png', suit:'d', rank:4},
-    {id:43, imagePath:'/images/5_of_diamonds.png', suit:'d', rank:5},
-    {id:44, imagePath:'/images/6_of_diamonds.png', suit:'d', rank:6},
-    {id:45, imagePath:'/images/7_of_diamonds.png', suit:'d', rank:7},
-    {id:46, imagePath:'/images/8_of_diamonds.png', suit:'d', rank:8},
-    {id:47, imagePath:'/images/9_of_diamonds.png', suit:'d', rank:9},
-    {id:48, imagePath:'/images/10_of_diamonds.png', suit:'d', rank:10},
-    {id:49, imagePath:'/images/jack_of_diamonds2.png', suit:'d', rank:11},
-    {id:50, imagePath:'/images/queen_of_diamonds2.png', suit:'d', rank:12},
-    {id:51, imagePath:'/images/king_of_diamonds2.png', suit:'d', rank:13},
-    {id:52, imagePath:'/images/ace_of_diamonds.png', suit:'d', rank:14},
-    {id:53, imagePath:'/images/red_joker.png', suit:'c', rank:2}
-]
-
+// Deck of Cards with Wilds removed
 const cardObjectDefinition = [
     {id:2, imagePath:'/images/3_of_clubs.png', suit:'c', rank:3},
     {id:3, imagePath:'/images/4_of_clubs.png', suit:'c', rank:4},
@@ -106,6 +51,7 @@ const cardObjectDefinition = [
     {id:52, imagePath:'/images/ace_of_diamonds.png', suit:'d', rank:14}
 ]
 
+//deck of wilds
 const wildsObjectDefinition = 
 [
     {id:1, imagePath:'/images/2_of_clubs.png', suit:'c', rank:2},
@@ -119,25 +65,31 @@ const cardBackImgPath = '/images/Card-back.png'
 
 const cardContainerElem = document.querySelector('.card-container')
 
+//this is the array that stores all 7 hands
 let playeranddealerhand = []
+//this is how we index into the hands array set to 10 at the start to get the dealer's hand(first five cards) and the player's hand (the remaining 30 cards in increments of 5)
 let handarrayindex = 10
 
+//this is the array of active cards in the Html
 let cards = []
 
-let cardPositions = []
 
 let gameInProgress = false
 let animinProgress = false
 
+//unused variables for now if we want to make it more like a game instead of a training tool it we can reimplement score and rounds.
 let score = 0
 let roundnum = 0
 let maxrounds = 6
 
+//the reference to the text at the top of the game board
 const currentGameStatusElem = document.querySelector('.current-status')
 const winColor = "green"
 const loseColor = "red"
 const primaryColor = "black"
 
+
+//button and dropdown refrences
 const playGameButtonElem = document.getElementById('playGame')
 const dpselectedHandElem = document.querySelector('#hands')
 const playerselectedHandElem = document.querySelector('#hands2')
@@ -146,20 +98,32 @@ const submitButtonElem = document.getElementById('submit')
 const nextButtonElem = document.getElementById('Next')
 const modeselectElem = document.querySelector('#mode')
 
+//again these are currently unused but if wanted can be reimplemented they are score and roumd display graphics references
 const scoreContainerElem = document.querySelector('.header-score-container')
 const scoreElem = document.querySelector('.score')
 const roundContainerElem = document.querySelector('.header-round-container')
 const roundElem = document.querySelector('.round')
 
-function getRandomCards(cardarray,count)
+// Fisher Yates Shuffle algorithm to randomly shuffle our deck of cards
+function shuffle(array)
 {
-    const scrambled = cardarray.sort(() => Math.random() - 0.5);
-    const scrambled2 = scrambled.sort(() => Math.random() - 0.5);
-    const scrambled3 = scrambled2.sort(() => Math.random() - 0.5);
-    const scrambled4 = scrambled3.sort(() => Math.random() - 0.5);
-    return scrambled4.slice(0,count)
+    for (let i = array.length - 1; i >= 1; i--)
+        {
+            const j = Math.floor(Math.random() * (i + 1));
+            [array[i],array[j]] = [array[j],array[i]];
+        }
+    return array
 }
 
+
+ 
+function getRandomCards(cardarray,count)
+{
+    const scrambled = shuffle([...cardarray])
+    return scrambled.slice(0,count)
+}
+
+//This is the start of our Loop when we load the page and it waits until we click the play game button
 updateStatusElement(scoreContainerElem, "none")
 updateStatusElement(roundContainerElem, "none")
 playGameButtonElem.addEventListener('click', ()=>{
@@ -170,28 +134,21 @@ playGameButtonElem.addEventListener('click', ()=>{
     else
     {
         cleanup()
+        // we need to remove the event listener from the previous game if we are starting a new game without reloading the page. otherwise we will skip rounds 
         nextButtonElem.removeEventListener('click',startRound)
         loadGame()  
     }
     })
 
-function chooseHand()
-{
-    if(canChooseHand())
-        {
 
-        }
-}
 
+//unused function can be reimplemented if score is wanted
 function updateScore()
 {
     score += 1
 }
 
-function canChooseHand()
-{
-    return gameInProgress == true && !animinProgress
-}
+//function to update the different elements whether its just to update the text inside them or hide / modify them.
 function updateStatusElement(elem, display, color, innerHTML)
 {
     elem.style.display = display
@@ -201,6 +158,8 @@ function updateStatusElement(elem, display, color, innerHTML)
         elem.innerHTML = innerHTML
     }
 }
+
+// Determines what the player and dp's hands are using supporting functions,compare's them against each other, then checks the selected inputs to see if they match
 function evaluateHandChoice()
 {
     submitButtonElem.disabled = false
@@ -230,22 +189,26 @@ function evaluateHandChoice()
     }, { once: true})
     handarrayindex += 5
 }
+// function that gathers key information about a hand, then figures out what the hand actually is with a supporting function, and once it knows what the hand is figures out what the next highest cards are in the case of a tie.
 function evaluateHandsProcessing(hand)
 {
+    // counter to keep track of total number of wilds in a hand
     let wilds = 0
+    // H = Highest Card value. L = lowest Card value
     let H = 0
     let L = 0
+    // SS = Same Suit. A counter that keeps track of how many cards of the same suit the hand has.
     let SS = 0
+    // if highestduplicates == 1 no duplicates, 2 pair or two pair, three is trips or full house, 4 is quads
     let highestduplicates = 0
-    let sortedhand = []
+    // if pair count == 1 just have a pair, if 2 two pair
     let paircount = 0
-    sortedhand = hand.sort((a,b) => {
+    // sort the hand in ascending order
+    hand.sort((a,b) => {
         return a.rank - b.rank
     })
-    console.log("break")
     H = hand[4].rank
     nextH = hand[3].rank
-    tempcount = 0
     for (let i =0; i < hand.length; i++)
         {
             if(hand[i].rank == 2)
@@ -258,6 +221,7 @@ function evaluateHandsProcessing(hand)
                 break
             }
         }
+    // remove wilds from the hand since they modify the rest of the cards and are dealt with later, now that we know how many were in the original hand.
     let nowilds = hand.slice(wilds,5)
     const dupcounts = {}
     const suitcounts = {}
@@ -282,11 +246,15 @@ function evaluateHandsProcessing(hand)
                 SS = value
             }
     })
+    // supporting function that returns what the hand is
     let handresult = evaluateHandFinal(wilds, H, L, SS, highestduplicates, paircount, nextH)
     const handOrder = {"High Card": 0 , "Pair": 1, "Two Pair": 2, "Trips": 3, "Straight": 4, "Flush" : 5, "Full House": 6, "Quads": 7, "Straight Flush": 8, "Quints": 9, "Royal Flush": 10, "Five Wilds": 11 }
+    // mainhand is an array that contains the main component of the hand for example: if the hand is a pair of 4's main hand will contain a 4, and highcards will be the rest of the cards in the hand that arent a 4
+    // This is for the case of a tie in the hands ex: pair vs pair we need to know which one has the highest pair or if they are also the same pair we then need to compare highcards until we have a winner.
     let highcards = []
     let mainhand = []
-    //natural if 0 means its wild payout if 1 its natural
+    // natural if 0 means its wild payout. if 1 its natural
+    // natural is currently unused, its here in case we ever want to add payouts to this.
     let natural = 0
     switch(handOrder[handresult])
     {
@@ -443,10 +411,16 @@ function evaluateHandsProcessing(hand)
             mainhand.push(H)
             break
     }
+    //sort the arrays in descending order to make comparison easier later.
     mainhand.sort((a,b) => b - a)
     highcards.sort((a,b) => b - a)
     return{handresult, mainhand, highcards, natural} 
 }
+// This function contains the logic for how to determine what hand you have based on the previously described constants.
+// First we try to determine the hands based on many wilds they have since this quickly reduces the possibilities of what the hands are.
+// Then we generally look to see if there is a pair or greater via highest duplicates since if those exist in the hands then automatically you cant have any type of flush or straight.
+// Then if not > pair in hand we use H, L, and SS to determine if flush or straight. Generally straight is when H - L = 4 the other logic in the code when we check is since the ace can be played high or low in a straight and has a value of 14.
+// Then if > pair we use paircount to determine if its trips twopair fullhouse or a pair. 
 function evaluateHandFinal(wilds, H, L, SS, highestduplicates, paircount, nextH)
 {
     if(wilds == 5)
@@ -664,6 +638,7 @@ function evaluateHandFinal(wilds, H, L, SS, highestduplicates, paircount, nextH)
         }
     }
 }
+// Function that compares the two hands and determines a winner. If hands are the same we then go to compare the mainpart of the hands and then if necessary the remaining highcards.
 function compareHands(dphandresult, dpmainhand, dphighcards, playerhandresult, playermainhand, playerhighcards)
 {
     //who wins 1 = Dp 2 = Player 0 = push
@@ -808,6 +783,7 @@ function compareHands(dphandresult, dpmainhand, dphighcards, playerhandresult, p
     }
 }
 
+//disables buttons and mode selection in prep for the start of the game then creates the cards and stores a reference to the cards that are currently being shown flips them and moves to the next part of the game loop.
 function loadGame()
 {
     submitButtonElem.disabled = true
@@ -820,12 +796,15 @@ function loadGame()
     startGame()
 }
 
+// moves forward the game loop and adds a listener for each time the next button is pressed to repeat the cycle.
 function startGame()
 {
     initializeNewGame()
     startRound()
     nextButtonElem.addEventListener('click',startRound)
 }
+
+// sets the values used for the game loop logic back to their inital states.
 function initializeNewGame()
 {
     score = 0
@@ -840,10 +819,11 @@ function initializeNewGame()
     //updateStatusElement(scoreElem,"block",primaryColor,`Score <span class='badge'>${score}</span>`)
     //updateStatusElement(roundElem,"block",primaryColor,`Round <span class='badge'>${roundnum}</span>`)
 }
+
+// The main game cycle logic plays animations, cycles through the different hands, and calls the evaluation functions. ends the game after 7 rounds. 
 function startRound()
 {   
     initializeNewRound()
-    console.log("newround")
     if(roundnum == 1)
         {
             CollectCards()
@@ -865,15 +845,12 @@ function startRound()
             //updateStatusElement(currentGameStatusElem, "block", winColor, `Thank you for playing your final score was ${score} out of 6 Good Job! Hit Play Game To play again!`)
             updateStatusElement(currentGameStatusElem, "block", winColor, `Thank you for playing! Hit Play Game To play again!`)
             updateStatusElement(modeselectElem, "block")
-            console.log("finish")
 
         }
     else
         {
             updateCards()
-            console.log("break2")
             cards = document.querySelectorAll('.card')
-            console.log(cards)
             lazywaytostartcardswithbackfacing2(cards,true)
             setTimeout(() => {
                 dealCards()
@@ -884,10 +861,11 @@ function startRound()
             }, 2000)
         }
 }
+
+// increases the round count and disables buttons so they cant be pressed while the current game logic is ongoing.
 function initializeNewRound()
 {
     roundnum += 1
-    console.log("activated")
     playGameButtonElem.disabled = true
     nextButtonElem.disabled = true
 
@@ -899,6 +877,7 @@ function initializeNewRound()
 
 }
 
+// disables buttons related to the game and re-enables the playgame button to let the player play again
 function gameOver()
 {
     updateStatusElement(scoreContainerElem, "none")
@@ -909,50 +888,10 @@ function gameOver()
 
 }
 
+// Different template formats for the animations and card displays.
 const collapsedGridAreaTemplate = '"a a a a a" "a a a a a"'
 const regularGridAreaTemplate = '"a b c d e" "f g h i j"'
-const semiCollapsedGridAreaTemplate = '"a b c d e" "f f f f f"'
 const cardCollectionCellClass = ".card-pos-a"
-const semiCardCollectionCellClass = ".card-pos-f"
-
-function semiCollectCards()
-{
-    transformGridArea(semiCollapsedGridAreaTemplate)
-    updateCardsToGridCellArea(semiCardCollectionCellClass)
-
-}
-function updateCardsToGridCellArea(cellPositionClassName)
-{
-    const cellPosistionElem = document.querySelector(cellPositionClassName)
-    
-    cards.forEach((card) =>{
-        if(card.id == cards[0].id)
-        {
-            addChildElement(document.querySelector('.card-pos-a'),card)
-        }
-        else if(card.id == cards[1].id)
-        {
-            addChildElement(document.querySelector('.card-pos-b'),card)
-        }
-        else if(card.id == cards[2].id)
-        {
-            addChildElement(document.querySelector('.card-pos-c'),card)
-        }
-        else if(card.id == cards[3].id)
-        {
-            addChildElement(document.querySelector('.card-pos-d'),card)
-        }
-        else if(card.id == cards[4].id)
-        {
-            addChildElement(document.querySelector('.card-pos-e'),card)
-        }
-        else
-        {
-            addChildElement(cellPosistionElem,card)
-        }
-    })
-    
-}
 
 function CollectCards()
 {
@@ -1042,20 +981,16 @@ function addCardsToAppropriateCell()
 
 function createCards()
 {
-    console.log(modeselectElem.value)
     if(modeselectElem.value == "fiveWilds")
         {
-            const sevenHands = getRandomCards(cardObjectDefinition,30)
-            const sevenHands2 = sevenHands.concat(wildsObjectDefinition)
-            const scrambled = sevenHands2.sort(() => Math.random() - 0.5);
-            const scrambled2 = scrambled.sort(() => Math.random() - 0.5);
-            const scrambled3 = scrambled2.sort(() => Math.random() - 0.5);
-            const scrambled4 = scrambled3.sort(() => Math.random() - 0.5);
-            playeranddealerhand = scrambled4
+            sevenHands = getRandomCards(cardObjectDefinition,30)
+            sevenHands = sevenHands.concat([...wildsObjectDefinition])
+            playeranddealerhand = getRandomCards(sevenHands,35)
         }
     else
         {
-            const sevenHands = getRandomCards(cardObjectDefinition2,35)
+            sevenHands = [...cardObjectDefinition].concat([...wildsObjectDefinition])
+            sevenHands = getRandomCards(sevenHands,35)
             playeranddealerhand = sevenHands
         }
     let firstround = playeranddealerhand.slice(0,10)
@@ -1074,30 +1009,33 @@ function updateCards()
 
 function removeCardElements()
 {
+    // remove all cards from their current positions to make room for the next set of cards to be displayed.
     let removecards = document.querySelectorAll('.card-pos-a .card');
-    removecards[0].remove(); // removes the second .card inside .card-pos-a
+    removecards[0].remove();
     removecards = document.querySelectorAll('.card-pos-b .card');
-    removecards[0].remove(); // removes the second .card inside .card-pos-a
+    removecards[0].remove(); 
     removecards = document.querySelectorAll('.card-pos-c .card');
-    removecards[0].remove(); // removes the second .card inside .card-pos-a
+    removecards[0].remove(); 
     removecards = document.querySelectorAll('.card-pos-d .card');
-    removecards[0].remove(); // removes the second .card inside .card-pos-a
+    removecards[0].remove(); 
     removecards = document.querySelectorAll('.card-pos-e .card');
-    removecards[0].remove(); // removes the second .card inside .card-pos-a
+    removecards[0].remove(); 
     removecards = document.querySelectorAll('.card-pos-f .card');
-    removecards[0].remove(); // removes the second .card inside .card-pos-a
+    removecards[0].remove(); 
     removecards = document.querySelectorAll('.card-pos-g .card');
-    removecards[0].remove(); // removes the second .card inside .card-pos-a
+    removecards[0].remove();
     removecards = document.querySelectorAll('.card-pos-h .card');
-    removecards[0].remove(); // removes the second .card inside .card-pos-a
+    removecards[0].remove();
     removecards = document.querySelectorAll('.card-pos-i .card');
-    removecards[0].remove(); // removes the second .card inside .card-pos-a
+    removecards[0].remove(); 
     removecards = document.querySelectorAll('.card-pos-j .card');
-    removecards[0].remove(); // removes the second .card inside .card-pos-a
-    console.log("done")   
+    removecards[0].remove();  
 }
+
+
 function cleanup()
 {
+    //delete all cards at start of new game after collecting them all into the a cell
     let removecards = document.querySelectorAll('.card-pos-a .card');
     removecards.forEach((cards,Index) =>
         {
@@ -1106,7 +1044,7 @@ function cleanup()
 }
 
 function createCard(cardItem, randomcards)
-{   //create dive element for each part of a card
+{   //create div element for each part of a card
     
     const cardElem = createElement('div')
     const cardInnerElem = createElement('div')
@@ -1155,10 +1093,7 @@ function createCard(cardItem, randomcards)
     //add card elem as child elem to appropriate grid cell
     addCardToGridCell(cardElem, randomcards)
 }
-function initializeCardPositions()
-{
 
-}
 function createElement(elemType)
 {
     return document.createElement(elemType)
@@ -1182,13 +1117,13 @@ function addChildElement(parentElem, childElem)
 function addCardToGridCell(card, randomcards)
 {
     const cardPositionClassName = mapCardIdToGridCell(card, randomcards)
-    console.log(cardPositionClassName)
     const cardPosElem = document.querySelector(cardPositionClassName)
    
     addChildElement(cardPosElem, card)  
 }
 function mapCardIdToGridCell(card, randomcards)
 {
+    //mapping the cards to the different cell slots
     if(card.id == randomcards[0].id)
         {
             return '.card-pos-a'
